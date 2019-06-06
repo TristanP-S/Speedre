@@ -16,4 +16,7 @@ class resultsVC: UIViewController{
     //function called when new item is pressed
     @IBAction func newItemPressed(_ sender: Any) {
     }
+    //function called when "All Scores" is pressed
+    @IBAction func allScoresPressed(_ sender: Any) {
+    }
 }

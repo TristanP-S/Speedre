@@ -160,12 +160,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAS-Vj-jZc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Results" id="7Z9-eI-mOl">
+                                        <barButtonItem key="rightBarButtonItem" title="All Scores" id="26O-JE-hO8">
+                                            <connections>
+                                                <action selector="allScoresPressed:" destination="Wzd-39-JZ2" id="2Fd-EZ-ttf"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vdn-0U-Uwp" firstAttribute="centerX" secondItem="lH0-tz-UYa" secondAttribute="centerX" id="2yP-hP-V4j"/>
                             <constraint firstItem="vdn-0U-Uwp" firstAttribute="top" secondItem="3jH-om-cnh" secondAttribute="bottom" id="Af8-lZ-rvZ"/>
                             <constraint firstItem="hxh-k6-ho3" firstAttribute="top" secondItem="8D2-DI-MBt" secondAttribute="bottom" id="Hdh-HL-QFh"/>
+                            <constraint firstItem="CAS-Vj-jZc" firstAttribute="top" secondItem="SVh-f1-Ee0" secondAttribute="top" id="LFR-Sc-Aif"/>
                             <constraint firstItem="hxh-k6-ho3" firstAttribute="centerX" secondItem="lH0-tz-UYa" secondAttribute="centerX" id="XCJ-jg-l1N"/>
                             <constraint firstItem="3jH-om-cnh" firstAttribute="centerX" secondItem="lH0-tz-UYa" secondAttribute="centerX" id="btE-vK-OGH"/>
                             <constraint firstItem="8D2-DI-MBt" firstAttribute="top" secondItem="vdn-0U-Uwp" secondAttribute="bottom" id="cVM-S3-j0j"/>
@@ -191,7 +204,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Scores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mAU-1x-44D">
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fde-uu-Utd">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
