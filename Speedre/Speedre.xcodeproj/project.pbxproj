@@ -13,6 +13,10 @@
 		02A0276422A8310A00E5FB17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A0276222A8310A00E5FB17 /* LaunchScreen.storyboard */; };
 		02CB9D4122A9B38C00CC8B02 /* loginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB9D4022A9B38C00CC8B02 /* loginVC.swift */; };
 		02CB9D4622A9C98500CC8B02 /* Speedre.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02CB9D4422A9C98500CC8B02 /* Speedre.xcdatamodeld */; };
+		02CB9D4822A9CA5800CC8B02 /* scoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB9D4722A9CA5800CC8B02 /* scoresVC.swift */; };
+		02CB9D4A22A9CAC000CC8B02 /* ScoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB9D4922A9CAC000CC8B02 /* ScoreCell.swift */; };
+		02CB9D4C22A9CAE600CC8B02 /* resultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB9D4B22A9CAE600CC8B02 /* resultsVC.swift */; };
+		02CB9D4E22A9CB0500CC8B02 /* promptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB9D4D22A9CB0500CC8B02 /* promptVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		02A0276522A8310A00E5FB17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02CB9D4022A9B38C00CC8B02 /* loginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginVC.swift; sourceTree = "<group>"; };
 		02CB9D4522A9C98500CC8B02 /* Speedre.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Speedre.xcdatamodel; sourceTree = "<group>"; };
+		02CB9D4722A9CA5800CC8B02 /* scoresVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoresVC.swift; sourceTree = "<group>"; };
+		02CB9D4922A9CAC000CC8B02 /* ScoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCell.swift; sourceTree = "<group>"; };
+		02CB9D4B22A9CAE600CC8B02 /* resultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultsVC.swift; sourceTree = "<group>"; };
+		02CB9D4D22A9CB0500CC8B02 /* promptVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = promptVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,9 @@
 			isa = PBXGroup;
 			children = (
 				02CB9D4022A9B38C00CC8B02 /* loginVC.swift */,
+				02CB9D4722A9CA5800CC8B02 /* scoresVC.swift */,
+				02CB9D4B22A9CAE600CC8B02 /* resultsVC.swift */,
+				02CB9D4D22A9CB0500CC8B02 /* promptVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -87,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				02CB9D4422A9C98500CC8B02 /* Speedre.xcdatamodeld */,
+				02CB9D4922A9CAC000CC8B02 /* ScoreCell.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -163,7 +175,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				02CB9D4622A9C98500CC8B02 /* Speedre.xcdatamodeld in Sources */,
+				02CB9D4C22A9CAE600CC8B02 /* resultsVC.swift in Sources */,
+				02CB9D4822A9CA5800CC8B02 /* scoresVC.swift in Sources */,
 				02CB9D4122A9B38C00CC8B02 /* loginVC.swift in Sources */,
+				02CB9D4A22A9CAC000CC8B02 /* ScoreCell.swift in Sources */,
+				02CB9D4E22A9CB0500CC8B02 /* promptVC.swift in Sources */,
 				02A0275A22A8310800E5FB17 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

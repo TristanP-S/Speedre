@@ -1,5 +1,5 @@
 //
-//  loginVC.swift
+//  scoresVC.swift
 //  Speedre
 //
 //  Created by Tristan Pudell-Spatscheck on 6/6/19.
@@ -7,8 +7,6 @@
 //
 import UIKit
 import Foundation
-class loginVC: UIViewController{
-    //whats happens when login button is tapped
-    @IBAction func loginTapped(_ sender: Any) {
-    }
+class scoresVC: UITableViewController{
+    
 }
