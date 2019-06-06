@@ -62,7 +62,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="538"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a photo of/with: (add item here with code)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sct-iJ-lJU">
-                                        <rect key="frame" x="0.0" y="538" width="414" height="180"/>
+                                        <rect key="frame" x="0.0" y="538" width="414" height="159.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make this a timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnH-YI-fFU">
+                                        <rect key="frame" x="0.0" y="697.5" width="414" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -77,16 +83,19 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="c2b-wR-l13" firstAttribute="top" secondItem="sct-iJ-lJU" secondAttribute="bottom" id="35j-yB-FWA"/>
-                                    <constraint firstItem="sct-iJ-lJU" firstAttribute="top" secondItem="AY3-7K-sTB" secondAttribute="bottom" id="7dQ-T6-2fR"/>
+                                    <constraint firstItem="sct-iJ-lJU" firstAttribute="leading" secondItem="KSX-F9-OOy" secondAttribute="leading" id="40v-j5-FH6"/>
                                     <constraint firstItem="AY3-7K-sTB" firstAttribute="top" secondItem="KSX-F9-OOy" secondAttribute="top" id="9hp-Py-3w4"/>
+                                    <constraint firstAttribute="trailing" secondItem="sct-iJ-lJU" secondAttribute="trailing" id="AaV-GJ-tPB"/>
+                                    <constraint firstItem="sct-iJ-lJU" firstAttribute="top" secondItem="AY3-7K-sTB" secondAttribute="bottom" id="GnC-0k-UZv"/>
                                     <constraint firstAttribute="bottom" secondItem="c2b-wR-l13" secondAttribute="bottom" id="Hav-uh-c7w"/>
+                                    <constraint firstItem="XnH-YI-fFU" firstAttribute="top" secondItem="sct-iJ-lJU" secondAttribute="bottom" id="IKR-7q-ZHy"/>
                                     <constraint firstAttribute="trailing" secondItem="c2b-wR-l13" secondAttribute="trailing" id="LHc-2e-ADG"/>
-                                    <constraint firstItem="sct-iJ-lJU" firstAttribute="leading" secondItem="KSX-F9-OOy" secondAttribute="leading" id="MXt-b9-XxM"/>
-                                    <constraint firstItem="c2b-wR-l13" firstAttribute="leading" secondItem="KSX-F9-OOy" secondAttribute="leading" id="eJ5-Kf-Ukb"/>
+                                    <constraint firstAttribute="trailing" secondItem="XnH-YI-fFU" secondAttribute="trailing" id="MqS-PP-eJD"/>
+                                    <constraint firstItem="XnH-YI-fFU" firstAttribute="leading" secondItem="KSX-F9-OOy" secondAttribute="leading" id="UcF-Kl-5ON"/>
                                     <constraint firstAttribute="trailing" secondItem="AY3-7K-sTB" secondAttribute="trailing" id="iCs-bS-Df3"/>
                                     <constraint firstItem="AY3-7K-sTB" firstAttribute="leading" secondItem="KSX-F9-OOy" secondAttribute="leading" id="pE2-Qb-SdG"/>
                                     <constraint firstAttribute="trailing" secondItem="sct-iJ-lJU" secondAttribute="trailing" id="tk0-hl-XQE"/>
+                                    <constraint firstItem="c2b-wR-l13" firstAttribute="top" secondItem="XnH-YI-fFU" secondAttribute="bottom" id="z5N-UV-oef"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -128,12 +137,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <state key="normal" title="New Item"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxv-3H-6ZT">
+                                <rect key="frame" x="186" y="390" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make this a timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jH-om-cnh">
+                                <rect key="frame" x="141.5" y="415" width="131" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vdn-0U-Uwp" firstAttribute="centerX" secondItem="lH0-tz-UYa" secondAttribute="centerX" id="2yP-hP-V4j"/>
+                            <constraint firstItem="vdn-0U-Uwp" firstAttribute="top" secondItem="3jH-om-cnh" secondAttribute="bottom" id="Af8-lZ-rvZ"/>
                             <constraint firstItem="hxh-k6-ho3" firstAttribute="top" secondItem="8D2-DI-MBt" secondAttribute="bottom" id="Hdh-HL-QFh"/>
                             <constraint firstItem="hxh-k6-ho3" firstAttribute="centerX" secondItem="lH0-tz-UYa" secondAttribute="centerX" id="XCJ-jg-l1N"/>
+                            <constraint firstItem="3jH-om-cnh" firstAttribute="centerX" secondItem="lH0-tz-UYa" secondAttribute="centerX" id="btE-vK-OGH"/>
                             <constraint firstItem="8D2-DI-MBt" firstAttribute="top" secondItem="vdn-0U-Uwp" secondAttribute="bottom" id="cVM-S3-j0j"/>
                             <constraint firstItem="8D2-DI-MBt" firstAttribute="centerX" secondItem="lH0-tz-UYa" secondAttribute="centerX" id="gpC-nH-H4R"/>
                             <constraint firstItem="vdn-0U-Uwp" firstAttribute="centerY" secondItem="lH0-tz-UYa" secondAttribute="centerY" id="qwV-XY-hzI"/>
