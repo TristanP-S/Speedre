@@ -160,29 +160,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAS-Vj-jZc">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Results" id="7Z9-eI-mOl">
-                                        <barButtonItem key="rightBarButtonItem" title="All Scores" id="26O-JE-hO8">
-                                            <connections>
-                                                <action selector="allScoresPressed:" destination="Wzd-39-JZ2" id="2Fd-EZ-ttf"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kn3-Hj-a3z">
+                                <rect key="frame" x="154" y="44" width="106" height="30"/>
+                                <state key="normal" title="View All Scores"/>
+                                <connections>
+                                    <action selector="allScoresPressed:" destination="Wzd-39-JZ2" eventType="touchUpInside" id="OOd-Fs-feE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vdn-0U-Uwp" firstAttribute="centerX" secondItem="lH0-tz-UYa" secondAttribute="centerX" id="2yP-hP-V4j"/>
                             <constraint firstItem="vdn-0U-Uwp" firstAttribute="top" secondItem="3jH-om-cnh" secondAttribute="bottom" id="Af8-lZ-rvZ"/>
                             <constraint firstItem="hxh-k6-ho3" firstAttribute="top" secondItem="8D2-DI-MBt" secondAttribute="bottom" id="Hdh-HL-QFh"/>
-                            <constraint firstItem="CAS-Vj-jZc" firstAttribute="top" secondItem="SVh-f1-Ee0" secondAttribute="top" id="LFR-Sc-Aif"/>
                             <constraint firstItem="hxh-k6-ho3" firstAttribute="centerX" secondItem="lH0-tz-UYa" secondAttribute="centerX" id="XCJ-jg-l1N"/>
                             <constraint firstItem="3jH-om-cnh" firstAttribute="centerX" secondItem="lH0-tz-UYa" secondAttribute="centerX" id="btE-vK-OGH"/>
                             <constraint firstItem="8D2-DI-MBt" firstAttribute="top" secondItem="vdn-0U-Uwp" secondAttribute="bottom" id="cVM-S3-j0j"/>
                             <constraint firstItem="8D2-DI-MBt" firstAttribute="centerX" secondItem="lH0-tz-UYa" secondAttribute="centerX" id="gpC-nH-H4R"/>
+                            <constraint firstItem="kn3-Hj-a3z" firstAttribute="top" secondItem="SVh-f1-Ee0" secondAttribute="top" id="mOu-Bb-wn8"/>
+                            <constraint firstItem="kn3-Hj-a3z" firstAttribute="centerX" secondItem="lH0-tz-UYa" secondAttribute="centerX" id="p17-ys-DLq"/>
                             <constraint firstItem="vdn-0U-Uwp" firstAttribute="centerY" secondItem="lH0-tz-UYa" secondAttribute="centerY" id="qwV-XY-hzI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SVh-f1-Ee0"/>
@@ -199,8 +195,8 @@
         <!--High Scores-->
         <scene sceneID="ate-Zb-uxL">
             <objects>
-                <tableViewController storyboardIdentifier="scoresVC" title="High Scores" id="ccx-1a-O9R" customClass="ScoresViewController" customModule="Speedre" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="scoresVC" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kg6-Tu-uBR">
+                <tableViewController storyboardIdentifier="scoreVC" title="High Scores" id="ccx-1a-O9R" customClass="ScoresViewController" customModule="Speedre" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kg6-Tu-uBR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

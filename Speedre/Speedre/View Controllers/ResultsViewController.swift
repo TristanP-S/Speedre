@@ -16,8 +16,13 @@ class ResultsViewController: UIViewController{
     }
     //function called when new item is pressed
     @IBAction func newItemPressed(_ sender: Any) {
+        let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "promptVC")
+        self.present(vc, animated: true)
     }
     //function called when "All Scores" is pressed
     @IBAction func allScoresPressed(_ sender: Any) {
+        let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "scoreVC")
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.present(vc, animated: true)
     }
 }

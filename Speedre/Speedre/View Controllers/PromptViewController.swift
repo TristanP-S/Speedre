@@ -7,16 +7,27 @@
 //
 import UIKit
 import Foundation
+//checks if camera just completed
+var camera=false
 class PromptViewController: UIViewController{
     @IBOutlet weak var promptImg: UIImageView!
     @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     //function called when camera button is pressed
     @IBAction func cameraPressed(_ sender: Any) {
         openCamera()
     }
     //opens up camera for use that will send user to results screen when finished
     func openCamera(){
-    
+        let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultsVC")
+        let imagePicker = UIImagePickerController()
+       //CHANGE TO .camera LATER, THIS IS BECAUSE CAMERA ISN'T AVAILIABLE ON SIM
+        imagePicker.sourceType = .photoLibrary
+        camera=true
+        //self.present(vc, animated: true) <- set this for completion
+        self.present(imagePicker, animated: true, completion: nil)
     }
 }
