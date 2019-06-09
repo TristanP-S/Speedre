@@ -32,7 +32,8 @@ class PromptViewController: UIViewController, UIImagePickerControllerDelegate, U
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             promptImg.image = img
-            APICommands(userID: "fubar").checkImg(image: img)
+            //sends in image to be checked (and userID is set to the deviceID)
+            APICommands(userID: UIDevice.current.identifierForVendor!.uuidString).checkImg(image: img)
         } else {
             print("ERROR WITH IMAGE SELECTION")
         }

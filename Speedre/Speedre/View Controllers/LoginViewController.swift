@@ -7,6 +7,7 @@
 //
 import UIKit
 import Foundation
+//(for some reason I wanted to implement a login feature, I decided against that later on)
 class LoginViewController: UIViewController{
     //whats happens when login button is tapped
     @IBAction func loginTapped(_ sender: Any) {

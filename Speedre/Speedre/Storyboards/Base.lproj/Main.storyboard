@@ -30,7 +30,10 @@
                                     <constraint firstAttribute="height" constant="50" id="I2h-lH-3cz"/>
                                     <constraint firstAttribute="width" constant="200" id="oGc-Dp-P0a"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="google"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" red="0.44154862719999999" green="0.70581244970000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TqU-aW-kr3"/>
                                 </connections>
@@ -270,6 +273,5 @@
     </scenes>
     <resources>
         <image name="camera" width="1200" height="630"/>
-        <image name="google" width="471" height="117"/>
     </resources>
 </document>
