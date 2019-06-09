@@ -37,6 +37,10 @@ class APICommands{
         let postString = "image=\(image)"
         let urlString = "https://api.deepai.org/api/densecap"
         let url = URL(string: urlString)
+        //will wait until API Key has been decoded before making a request
+        while(APIkey == "noAPIkey"){
+            sleep(1)
+        }
         var request = URLRequest(url: url!)
         //adds api key to request
         request.addValue(APIkey, forHTTPHeaderField: "Api-Key")
