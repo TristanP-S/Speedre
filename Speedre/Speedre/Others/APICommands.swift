@@ -8,5 +8,5 @@
 
 import Foundation
 class APICommands{
-    
+    var getAPI = "http://www.spatscheck.com/gehajbr9t14hdfildhuqhjq3.json?replacewithlogin"
 }

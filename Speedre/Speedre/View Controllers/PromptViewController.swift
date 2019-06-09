@@ -8,8 +8,7 @@
 import UIKit
 import Foundation
 //checks if camera just completed
-var camera=false
-class PromptViewController: UIViewController{
+class PromptViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     @IBOutlet weak var promptImg: UIImageView!
     @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
@@ -24,10 +23,17 @@ class PromptViewController: UIViewController{
     func openCamera(){
         let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultsVC")
         let imagePicker = UIImagePickerController()
-       //CHANGE TO .camera LATER, THIS IS BECAUSE CAMERA ISN'T AVAILIABLE ON SIM
+       //CHANGE TO .camera LATER, THIS IS BECAUSE CAMERA ISN'T AVAILIABLE ON SIM (oly .photoLibrary is)
         imagePicker.sourceType = .photoLibrary
-        camera=true
+        imagePicker.delegate = self
         //self.present(vc, animated: true) <- set this for completion
         self.present(imagePicker, animated: true, completion: nil)
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            promptImg.image = img
+        } else {
+            print("ERROR WITH IMAGE SELECTION")
+        }
     }
 }
