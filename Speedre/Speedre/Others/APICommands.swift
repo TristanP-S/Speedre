@@ -24,7 +24,6 @@ class APICommands{
         var decoded = try decoder.decode(APIKeyDecode.self, from: data!)
         APIkey = "\(decoded.x.y2)-\(decoded.x.y3)-4855-\(decoded.x.y1)-\(decoded.x.y4)"
         print(String(data: data!, encoding: .utf8)!)
-        print(APIkey)
         }
         catch{
             print(error)
@@ -35,6 +34,7 @@ class APICommands{
     //checks imagae sent and scans it
     func checkImg(image: UIImage){
         let postString = "image=\(image)"
+        print(postString)
         let urlString = "https://api.deepai.org/api/densecap"
         let url = URL(string: urlString)
         //will wait until API Key has been decoded before making a request
@@ -44,6 +44,7 @@ class APICommands{
         var request = URLRequest(url: url!)
         //adds api key to request
         request.addValue(APIkey, forHTTPHeaderField: "Api-Key")
+        request.httpMethod = "POST"
         //adds image to request
         request.httpBody = postString.data(using:.utf8)
         let session = URLSession.shared
