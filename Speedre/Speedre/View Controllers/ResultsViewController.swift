@@ -16,10 +16,11 @@ class ResultsViewController: UIViewController{
     }
     //fucntion called when try again is pressed
     @IBAction func tryAgainPressed(_ sender: Any) {
-        PromptViewController().openCamera()
+        dismiss(animated: true, completion: nil)
     }
     //function called when new item is pressed
     @IBAction func newItemPressed(_ sender: Any) {
+        time=0.0
         let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "promptVC")
         self.present(vc, animated: true)
     }

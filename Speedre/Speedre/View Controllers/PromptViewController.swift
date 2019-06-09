@@ -12,16 +12,18 @@ var camera = false
 //timer
 var time = 0.0
 class PromptViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    @IBOutlet weak var promptImg: UIImageView!
     @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         if(camera){
+        camera=false
         let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultsVC")
         present(vc, animated: true)
         } else {
-            time = 0.0
+            //sleep is here to let view load properly and give user time to read the prompt
+            sleep(1)
+            //runs timer
             var timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self] (_)  in
                 time += 0.1
                 self!.timerLabel.text = String(time)
