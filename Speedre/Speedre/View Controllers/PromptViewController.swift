@@ -14,8 +14,6 @@ class PromptViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var timerLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TESTS the API COMMANDS
-        APICommands(userID: "fubar").checkImg(image: UIImage(named: "camera")!)
     }
     //function called when camera button is pressed
     @IBAction func cameraPressed(_ sender: Any) {
@@ -34,6 +32,7 @@ class PromptViewController: UIViewController, UIImagePickerControllerDelegate, U
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             promptImg.image = img
+            APICommands(userID: "fubar").checkImg(image: img)
         } else {
             print("ERROR WITH IMAGE SELECTION")
         }
