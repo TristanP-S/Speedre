@@ -130,7 +130,7 @@
         <!--Results-->
         <scene sceneID="gH8-4D-yff">
             <objects>
-                <viewController storyboardIdentifier="resultsVC" title="Results" id="Wzd-39-JZ2" customClass="ResultsViewController" customModule="Speedre" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="resultsVC" title="Results" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wzd-39-JZ2" customClass="ResultsViewController" customModule="Speedre" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lH0-tz-UYa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

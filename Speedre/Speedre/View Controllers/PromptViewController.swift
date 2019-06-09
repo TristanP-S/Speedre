@@ -21,19 +21,20 @@ class PromptViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     //opens up camera for use that will send user to results screen when finished
     func openCamera(){
-        let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultsVC")
         let imagePicker = UIImagePickerController()
        //CHANGE TO .camera LATER, THIS IS BECAUSE CAMERA ISN'T AVAILIABLE ON SIM (oly .photoLibrary is)
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
-        //self.present(vc, animated: true) <- set this for completion
         self.present(imagePicker, animated: true, completion: nil)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultsVC")
             promptImg.image = img
             //sends in image to be checked (and userID is set to the deviceID)
             APICommands(userID: UIDevice.current.identifierForVendor!.uuidString).checkImg(image: img)
+            UIApplication.shared.keyWindow?.rootViewController!.present(vc, animated: true)
+            dismiss(animated: true, completion: nil)
         } else {
             print("ERROR WITH IMAGE SELECTION")
         }
