@@ -25,11 +25,14 @@ class APICommands{
     }
     //checks imagae sent and scans it
     func checkImg(image: UIImage){
+        let postString = "image=\(image)"
         let urlString = "https://api.deepai.org/api/densecap"
         let url = URL(string: urlString)
         var request = URLRequest(url: url!)
         //adds api key to request
         request.addValue(APIkey, forHTTPHeaderField: "Api-Key")
+        //adds image to request
+        request.httpBody = postString.data(using:.utf8)
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
             if error != nil { // Handle error

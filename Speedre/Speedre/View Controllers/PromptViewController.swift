@@ -14,6 +14,8 @@ class PromptViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var timerLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //TESTS the API COMMANDS
+        APICommands(userID: "fubar").checkImg(image: UIImage(named: "camera")!)
     }
     //function called when camera button is pressed
     @IBAction func cameraPressed(_ sender: Any) {
