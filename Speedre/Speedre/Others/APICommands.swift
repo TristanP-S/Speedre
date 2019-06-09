@@ -19,7 +19,16 @@ class APICommands{
         if error != nil { // Handle error
             return
         }
+        do{
+        let decoder = JSONDecoder()
+        var decoded = try decoder.decode(APIKeyDecode.self, from: data!)
+        APIkey = "\(decoded.x.y2)-\(decoded.x.y3)-4855-\(decoded.x.y1)-\(decoded.x.y4)"
         print(String(data: data!, encoding: .utf8)!)
+        print(APIkey)
+        }
+        catch{
+            print(error)
+        }
         }
     task.resume()
     }

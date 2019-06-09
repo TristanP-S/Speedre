@@ -19,7 +19,7 @@ struct Captions: Codable{
     let confidence: Double
 }
 //api key encoding returned after reqeust
-struct APIKey: Codable{
+struct APIKeyDecode: Codable{
     let x: y
 }
 struct y: Codable{
