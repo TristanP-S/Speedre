@@ -10,6 +10,10 @@ import Foundation
 class ResultsViewController: UIViewController{
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var resultsLabel: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.timerLabel.text=String(time)
+    }
     //fucntion called when try again is pressed
     @IBAction func tryAgainPressed(_ sender: Any) {
         PromptViewController().openCamera()

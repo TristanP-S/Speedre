@@ -8,12 +8,26 @@
 import UIKit
 import Foundation
 //checks if camera just completed
+var camera = false
+//timer
+var time = 0.0
 class PromptViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     @IBOutlet weak var promptImg: UIImageView!
     @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(camera){
+        let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultsVC")
+        present(vc, animated: true)
+        } else {
+            time = 0.0
+            var timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self] (_)  in
+                time += 0.1
+                self!.timerLabel.text = String(time)
+            })
+            
+        }
     }
     //function called when camera button is pressed
     @IBAction func cameraPressed(_ sender: Any) {
@@ -29,12 +43,10 @@ class PromptViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultsVC")
-            promptImg.image = img
             //sends in image to be checked (and userID is set to the deviceID)
-            APICommands(userID: UIDevice.current.identifierForVendor!.uuidString).checkImg(image: img)
-            UIApplication.shared.keyWindow?.rootViewController!.present(vc, animated: true)
+            camera = APICommands(userID: UIDevice.current.identifierForVendor!.uuidString).checkImg(image: img, word: "bird")
             dismiss(animated: true, completion: nil)
+            viewDidLoad()
         } else {
             print("ERROR WITH IMAGE SELECTION")
         }

@@ -32,9 +32,8 @@ class APICommands{
     task.resume()
     }
     //checks imagae sent and scans it
-    func checkImg(image: UIImage){
+    func checkImg(image: UIImage, word: String) -> Bool{
         let postString = "image=\(image)"
-        print(postString)
         let urlString = "https://api.deepai.org/api/densecap"
         let url = URL(string: urlString)
         //will wait until API Key has been decoded before making a request
@@ -55,5 +54,6 @@ class APICommands{
             print(String(data: data!, encoding: .utf8)!)
         }
         task.resume()
+        return true;
     }
 }

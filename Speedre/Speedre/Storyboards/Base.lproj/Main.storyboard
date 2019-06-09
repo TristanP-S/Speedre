@@ -64,26 +64,20 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KSX-F9-OOy">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AY3-7K-sTB">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="677"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a photo of/with: (add item here with code)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sct-iJ-lJU">
-                                        <rect key="frame" x="0.0" y="677" width="414" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a photo of/with: (add item here with code)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sct-iJ-lJU">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make this a timer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnH-YI-fFU">
-                                        <rect key="frame" x="0.0" y="697.5" width="414" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make this a timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnH-YI-fFU">
+                                        <rect key="frame" x="0.0" y="20.5" width="414" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2b-wR-l13">
-                                        <rect key="frame" x="0.0" y="718" width="414" height="100"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="m0A-gT-dqT"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="41" width="414" height="777"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                         <state key="normal" title="Take a photo" image="camera"/>
                                         <connections>
@@ -92,19 +86,9 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="sct-iJ-lJU" firstAttribute="leading" secondItem="KSX-F9-OOy" secondAttribute="leading" id="40v-j5-FH6"/>
-                                    <constraint firstItem="AY3-7K-sTB" firstAttribute="top" secondItem="KSX-F9-OOy" secondAttribute="top" id="9hp-Py-3w4"/>
-                                    <constraint firstAttribute="trailing" secondItem="sct-iJ-lJU" secondAttribute="trailing" id="AaV-GJ-tPB"/>
-                                    <constraint firstItem="sct-iJ-lJU" firstAttribute="top" secondItem="AY3-7K-sTB" secondAttribute="bottom" id="GnC-0k-UZv"/>
-                                    <constraint firstAttribute="bottom" secondItem="c2b-wR-l13" secondAttribute="bottom" id="Hav-uh-c7w"/>
-                                    <constraint firstItem="XnH-YI-fFU" firstAttribute="top" secondItem="sct-iJ-lJU" secondAttribute="bottom" id="IKR-7q-ZHy"/>
-                                    <constraint firstAttribute="trailing" secondItem="c2b-wR-l13" secondAttribute="trailing" id="LHc-2e-ADG"/>
-                                    <constraint firstAttribute="trailing" secondItem="XnH-YI-fFU" secondAttribute="trailing" id="MqS-PP-eJD"/>
-                                    <constraint firstItem="XnH-YI-fFU" firstAttribute="leading" secondItem="KSX-F9-OOy" secondAttribute="leading" id="UcF-Kl-5ON"/>
-                                    <constraint firstAttribute="trailing" secondItem="AY3-7K-sTB" secondAttribute="trailing" id="iCs-bS-Df3"/>
-                                    <constraint firstItem="AY3-7K-sTB" firstAttribute="leading" secondItem="KSX-F9-OOy" secondAttribute="leading" id="pE2-Qb-SdG"/>
-                                    <constraint firstAttribute="trailing" secondItem="sct-iJ-lJU" secondAttribute="trailing" id="tk0-hl-XQE"/>
-                                    <constraint firstItem="c2b-wR-l13" firstAttribute="top" secondItem="XnH-YI-fFU" secondAttribute="bottom" id="z5N-UV-oef"/>
+                                    <constraint firstItem="XnH-YI-fFU" firstAttribute="centerX" secondItem="KSX-F9-OOy" secondAttribute="centerX" id="KF7-Pk-tPR"/>
+                                    <constraint firstItem="sct-iJ-lJU" firstAttribute="centerX" secondItem="KSX-F9-OOy" secondAttribute="centerX" id="Ngg-Gp-Fzf"/>
+                                    <constraint firstItem="XnH-YI-fFU" firstAttribute="top" secondItem="sct-iJ-lJU" secondAttribute="bottom" id="Z6w-IL-8pQ"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -118,7 +102,6 @@
                         <viewLayoutGuide key="safeArea" id="YWy-6M-puQ"/>
                     </view>
                     <connections>
-                        <outlet property="promptImg" destination="AY3-7K-sTB" id="bct-8m-Cdy"/>
                         <outlet property="promptLabel" destination="sct-iJ-lJU" id="agl-R7-tPA"/>
                         <outlet property="timerLabel" destination="XnH-YI-fFU" id="w4I-Yz-Kaw"/>
                     </connections>
