@@ -12,6 +12,7 @@
 		02A0276122A8310A00E5FB17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A0276022A8310A00E5FB17 /* Assets.xcassets */; };
 		02A0276422A8310A00E5FB17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A0276222A8310A00E5FB17 /* LaunchScreen.storyboard */; };
 		02C411F722ADAD050008E6F2 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C411F622ADAD050008E6F2 /* CoreData.swift */; };
+		02C411F922ADB0360008E6F2 /* Json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C411F822ADB0360008E6F2 /* Json.swift */; };
 		02CB9D4122A9B38C00CC8B02 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB9D4022A9B38C00CC8B02 /* LoginViewController.swift */; };
 		02CB9D4622A9C98500CC8B02 /* Speedre.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02CB9D4422A9C98500CC8B02 /* Speedre.xcdatamodeld */; };
 		02CB9D4822A9CA5800CC8B02 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB9D4722A9CA5800CC8B02 /* ScoreViewController.swift */; };
@@ -29,6 +30,7 @@
 		02A0276322A8310A00E5FB17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02A0276522A8310A00E5FB17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02C411F622ADAD050008E6F2 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		02C411F822ADB0360008E6F2 /* Json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Json.swift; sourceTree = "<group>"; };
 		02CB9D4022A9B38C00CC8B02 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		02CB9D4522A9C98500CC8B02 /* Speedre.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Speedre.xcdatamodel; sourceTree = "<group>"; };
 		02CB9D4722A9CA5800CC8B02 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			children = (
 				02CB9D4422A9C98500CC8B02 /* Speedre.xcdatamodeld */,
 				02CB9D4F22A9DFD400CC8B02 /* APICommands.swift */,
+				02C411F822ADB0360008E6F2 /* Json.swift */,
 				02C411F622ADAD050008E6F2 /* CoreData.swift */,
 				02CB9D4922A9CAC000CC8B02 /* ScoreCell.swift */,
 			);
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02CB9D5022A9DFD500CC8B02 /* APICommands.swift in Sources */,
+				02C411F922ADB0360008E6F2 /* Json.swift in Sources */,
 				02CB9D4622A9C98500CC8B02 /* Speedre.xcdatamodeld in Sources */,
 				02CB9D4C22A9CAE600CC8B02 /* ResultsViewController.swift in Sources */,
 				02CB9D4822A9CA5800CC8B02 /* ScoreViewController.swift in Sources */,
