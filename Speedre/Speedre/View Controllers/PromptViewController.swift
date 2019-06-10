@@ -13,7 +13,7 @@ class PromptViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var timerLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.promptLabel.text = "Take a photo of/with: \(item)"
+        self.promptLabel.text = "Take a photo of/with: \(item.currItem())"
         if(camera){
         camera=false
         let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultsVC")
@@ -50,7 +50,7 @@ class PromptViewController: UIViewController, UIImagePickerControllerDelegate, U
             //sends in image to be checked (and userID is set to the deviceID)
             camera = true
             //userID = deviceID, image=image sent, word = word that is being looked for
-            var results = APICommands(userID: UIDevice.current.identifierForVendor!.uuidString).checkImg(image: img, word: item)
+            var results = APICommands(userID: UIDevice.current.identifierForVendor!.uuidString).checkImg(image: img, word: item.currItem())
             if(results){
                 result="manged"
             } else {

@@ -8,9 +8,10 @@
 import UIKit
 import Foundation
 import CoreData
-class ScoreViewController: UITableViewController{
+class ScoresViewController: UITableViewController{
     //scores for tableview
     var scores: [Score] = []
+    
     func fetchInfo () {
         let fetchRequest: NSFetchRequest<Score> = Score.fetchRequest()
         do {
@@ -25,6 +26,7 @@ class ScoreViewController: UITableViewController{
     //sets # of items loaded in table view at once
     override func numberOfSections(in tableView: UITableView) -> Int {
         fetchInfo()
+        print(scores.count)
         return scores.count;
     }
     //sets up each cell in table view

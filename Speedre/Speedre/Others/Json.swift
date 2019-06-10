@@ -13,7 +13,7 @@ var camera = false
 //timer
 var time = 0.0
 //item in prompt
-var item = "flower"
+let item = ItemManager()
 //results of checking photo taken
 var result = "Item not checked"
 

@@ -14,11 +14,11 @@ class ResultsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.timerLabel.text = String(format: "%.1f", time)
-        self.resultsLabel.text = "You \(result) to include a \(item) in your photo"
+        self.resultsLabel.text = "You \(result) to include a \(item.currItem()) in your photo"
         //attempts to add results to coredata (not working yet)
         let results = Score(context: dataController.viewContext)
         results.time = time
-        results.item = item
+        results.item = item.currItem()
         do {
             try dataController.viewContext.save()
         } catch {
@@ -32,6 +32,7 @@ class ResultsViewController: UIViewController{
     //function called when new item is pressed
     @IBAction func newItemPressed(_ sender: Any) {
         time=0.0
+        item.newItem()
         let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "promptVC")
         self.present(vc, animated: true)
     }

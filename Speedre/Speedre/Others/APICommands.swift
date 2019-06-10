@@ -73,7 +73,7 @@ class APICommands{
         task.resume()
         done.wait()
         for caption in (decoded.output.captions) {
-            if((caption.caption.contains(item))){
+            if((caption.caption.contains(word))){
             print("y")
             return true;
             }
