@@ -9,7 +9,7 @@ import UIKit
 import Foundation
 var APIkey: String =  "noAPIkey"
 class APICommands{
-    //fucntion that gets the APIkey
+    //fucntion that gets the APIkey 
     init(userID: String){
     let urlString = "http://www.spatscheck.com/gehajbr9t14hdfildhuqhjq3.json?\(userID)"
     let url = URL(string: urlString)

@@ -7,15 +7,13 @@
 //
 import UIKit
 import Foundation
-//checks if camera just completed
-var camera = false
-//timer
-var time = 0.0
+import CoreData
 class PromptViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.promptLabel.text = "Take a photo of/with: \(item)"
         if(camera){
         camera=false
         let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultsVC")
@@ -46,7 +44,14 @@ class PromptViewController: UIViewController, UIImagePickerControllerDelegate, U
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             //sends in image to be checked (and userID is set to the deviceID)
-            camera = APICommands(userID: UIDevice.current.identifierForVendor!.uuidString).checkImg(image: img, word: "bird")
+            camera = true
+            //userID = deviceID, image=image sent, word = word that is being looked for
+            var results = APICommands(userID: UIDevice.current.identifierForVendor!.uuidString).checkImg(image: img, word: item)
+            if(results){
+                result="manged"
+            } else {
+                result="failed"
+            }
             dismiss(animated: true, completion: nil)
             viewDidLoad()
         } else {

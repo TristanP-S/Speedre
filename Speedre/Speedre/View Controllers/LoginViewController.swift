@@ -7,7 +7,8 @@
 //
 import UIKit
 import Foundation
-//(for some reason I wanted to implement a login feature, I decided against that later on)
+import CoreData
+//(for some reason I wanted to implement a login feature, I decided against that later on, however this stuff isn't going to be renamed because it is used so little)
 class LoginViewController: UIViewController{
     //whats happens when login button is tapped
     @IBAction func loginTapped(_ sender: Any) {
