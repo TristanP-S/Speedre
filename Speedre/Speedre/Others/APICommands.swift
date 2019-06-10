@@ -74,10 +74,10 @@ class APICommands{
         done.wait()
         //XXX add check if  word is in response here.
         for caption in decoded.captions {
-        if(!caption.caption.contains(item)){
-            return false;
+        if(caption.caption.contains(item)){
+            return true;
             }
         }
-        return true;
+        return false;
     }
 }
