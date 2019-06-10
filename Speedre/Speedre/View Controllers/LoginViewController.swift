@@ -14,5 +14,6 @@ class LoginViewController: UIViewController{
     @IBAction func loginTapped(_ sender: Any) {
         let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "promptVC")
         self.present(vc, animated: true)
+        dataController.load()
     }
 }

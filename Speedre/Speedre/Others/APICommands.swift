@@ -37,7 +37,7 @@ class APICommands{
         let boundary = "------------------------5870595d8c958198"
         let imageData = image.jpegData(compressionQuality: 1.0)
         var body = Data()
-        var decoded: Output = Output(captions: [Captions(caption: "nothing")])
+        var decoded: Results = Results(output: Output(captions: [Caption(caption: "", boundingBox: [1], confidence: 1.0)]), id: "")
         body.append("\r\n--\(boundary)".data(using:.utf8)!)
         body.append("\r\nContent-Disposition: form-data; name=\"image\"; filename=\"xx.jpg\"\r\n".data(using:.utf8)!)
         body.append("Content-Type: image/jpeg\r\n\r\n".data(using:.utf8)!)
@@ -45,7 +45,7 @@ class APICommands{
         body.append("\r\n--\(boundary)--\r\n".data(using:.utf8)!)
         print(imageData)
         // actual start of URL stuff
-        let urlString = "http://api.deepai.org/api/densecap"
+        let urlString = "https://api.deepai.org/api/densecap"
         let url = URL(string: urlString)
         var request = URLRequest(url: url!)
         request.httpMethod = "POST"
@@ -62,9 +62,9 @@ class APICommands{
                 return
             }
             do{
-            print(String(data: data!, encoding: .utf8)!)
+            //print(String(data: data!, encoding: .utf8)!)
             let decoder = JSONDecoder()
-            decoded = try decoder.decode(Output.self, from: data!)
+            decoded = try decoder.decode(Results.self, from: data!)
             done.signal()
             } catch {
                 print(error)
@@ -72,13 +72,11 @@ class APICommands{
         }
         task.resume()
         done.wait()
-        if decoded.captions != nil  {
-        for caption in decoded.captions! {
-            if((caption.caption!.contains(item))){
+        for caption in (decoded.output.captions) {
+            if((caption.caption.contains(item))){
             print("y")
             return true;
             }
-        }
         }
         print("w")
         return false;

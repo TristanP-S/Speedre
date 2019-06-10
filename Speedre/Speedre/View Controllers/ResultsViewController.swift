@@ -13,7 +13,7 @@ class ResultsViewController: UIViewController{
     @IBOutlet weak var resultsLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.timerLabel.text=String(time)
+        self.timerLabel.text = String(format: "%.1f", time)
         self.resultsLabel.text = "You \(result) to include a \(item) in your photo"
         //attempts to add results to coredata (not working yet)
         let results = Score(context: dataController.viewContext)

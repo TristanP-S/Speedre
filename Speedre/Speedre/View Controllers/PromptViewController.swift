@@ -24,7 +24,7 @@ class PromptViewController: UIViewController, UIImagePickerControllerDelegate, U
             //runs timer
             var timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self] (_)  in
                 time += 0.1
-                self!.timerLabel.text = String(time)
+                self!.timerLabel.text = String(format: "%.1f", time)
             })
             
         }
