@@ -8,8 +8,6 @@
 
 
 //GLOBAL VARIABLES
-//scores for tableview
-var scores: [Score] = []
 //checks if camera just completed
 var camera = false
 //timer

@@ -181,7 +181,7 @@
         <!--High Scores-->
         <scene sceneID="ate-Zb-uxL">
             <objects>
-                <tableViewController storyboardIdentifier="scoreVC" title="High Scores" id="ccx-1a-O9R" customClass="ScoresViewController" customModule="Speedre" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="scoreVC" title="High Scores" id="ccx-1a-O9R" customClass="ScoreViewController" customModule="Speedre" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Kg6-Tu-uBR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -248,6 +248,9 @@
                             <outlet property="delegate" destination="ccx-1a-O9R" id="GQm-sq-3FO"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="Kg6-Tu-uBR" id="bSD-3X-1s3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jfR-em-Dmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

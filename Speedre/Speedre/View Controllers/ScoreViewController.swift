@@ -8,7 +8,9 @@
 import UIKit
 import Foundation
 import CoreData
-class ScoresViewController: UITableViewController{
+class ScoreViewController: UITableViewController{
+    //scores for tableview
+    var scores: [Score] = []
     func fetchInfo () {
         let fetchRequest: NSFetchRequest<Score> = Score.fetchRequest()
         do {
@@ -22,11 +24,11 @@ class ScoresViewController: UITableViewController{
     }
     //sets # of items loaded in table view at once
     override func numberOfSections(in tableView: UITableView) -> Int {
+        fetchInfo()
         return scores.count;
     }
     //sets up each cell in table view
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        fetchInfo()
         let cell=tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath) as! ScoreCell
         cell.itemLabel.text = scores[indexPath.row].item
         cell.numLabel.text = "\(indexPath.row)"

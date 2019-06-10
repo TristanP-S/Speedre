@@ -19,6 +19,11 @@ class ResultsViewController: UIViewController{
         let results = Score(context: dataController.viewContext)
         results.time = time
         results.item = item
+        do {
+            try dataController.viewContext.save()
+        } catch {
+            return
+        }
     }
     //fucntion called when try again is pressed
     @IBAction func tryAgainPressed(_ sender: Any) {
