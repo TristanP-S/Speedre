@@ -23,7 +23,7 @@ class APICommands{
                 let decoder = JSONDecoder()
                 var decoded = try decoder.decode(APIKeyDecode.self, from: data!)
                 APIkey = "\(decoded.x.y2)-\(decoded.x.y3)-4855-\(decoded.x.y1)-\(decoded.x.y4)"
-                print(String(data: data!, encoding: .utf8)!)
+                //print(String(data: data!, encoding: .utf8)!)
             }
             catch{
                 print(error)
@@ -37,7 +37,7 @@ class APICommands{
         let boundary = "------------------------5870595d8c958198"
         let imageData = image.jpegData(compressionQuality: 1.0)
         var body = Data()
-        var decoded: Output
+        var decoded: Output = Output(captions: [Captions(caption: "nothing", confidence: 0.0)])
         body.append("\r\n--\(boundary)".data(using:.utf8)!)
         body.append("\r\nContent-Disposition: form-data; name=\"image\"; filename=\"xx.jpg\"\r\n".data(using:.utf8)!)
         body.append("Content-Type: image/jpeg\r\n\r\n".data(using:.utf8)!)
@@ -73,7 +73,11 @@ class APICommands{
         task.resume()
         done.wait()
         //XXX add check if  word is in response here.
-        
+        for caption in decoded.captions {
+        if(!caption.caption.contains(item)){
+            return false;
+            }
+        }
         return true;
     }
 }
