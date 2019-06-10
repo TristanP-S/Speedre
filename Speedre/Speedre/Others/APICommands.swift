@@ -33,7 +33,7 @@ class APICommands{
     }
     //checks imagae sent and scans it
     func checkImg(image: UIImage, word: String) -> Bool{
-        let done = DispatchSemaphore(value: 1)
+        let done = DispatchSemaphore(value: 0)
         let boundary = "------------------------5870595d8c958198"
         let imageData = image.jpegData(compressionQuality: 1.0)
         var body = Data()
@@ -72,12 +72,15 @@ class APICommands{
         }
         task.resume()
         done.wait()
-        //XXX add check if  word is in response here.
-        for caption in decoded.captions {
-        if(caption.caption.contains(item)){
+        if decoded.captions != nil  {
+        for caption in decoded.captions! {
+            if((caption.caption!.contains(item))){
+            print("y")
             return true;
             }
         }
+        }
+        print("w")
         return false;
     }
 }

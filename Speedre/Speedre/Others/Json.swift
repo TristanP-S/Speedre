@@ -15,7 +15,7 @@ var camera = false
 //timer
 var time = 0.0
 //item in prompt
-var item = "Item"
+var item = "flower"
 //results of checking photo taken
 var result = "Item not checked"
 
@@ -24,13 +24,13 @@ var result = "Item not checked"
 import Foundation
 //results returned after image is sent to API
 struct Results: Decodable{
-    let output: Output
+    let output: Output?
 }
 struct Output: Decodable{
-    let captions: [Captions]
+    let captions: [Captions]?
 }
 struct Captions: Decodable{
-    let caption: String
+    let caption: String?
 }
 //api key encoding returned after reqeust
 struct APIKeyDecode: Codable{
