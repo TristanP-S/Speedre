@@ -15,16 +15,17 @@ class ItemManager {
     }
     // define possible items here, kept it short for running without camera
     var itempool: [String] = [
-    "flower",
-    "dog",
-    "leaf",
-    "cat"]
+        "flower",
+        "dog",
+        "leaf",
+        "cat"]
+    var curWord: String = "house"
     //shuffles item array and returns first element
     func newItem() -> String {
-        itempool.shuffle()
-        return itempool[0]
+        curWord = itempool.randomElement()!
+        return curWord
     }
     func currItem() -> String {
-        return itempool[0]
+        return curWord
     }
 }

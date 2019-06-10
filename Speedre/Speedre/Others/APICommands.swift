@@ -43,7 +43,6 @@ class APICommands{
         body.append("Content-Type: image/jpeg\r\n\r\n".data(using:.utf8)!)
         body.append(imageData!)
         body.append("\r\n--\(boundary)--\r\n".data(using:.utf8)!)
-        print(imageData)
         // actual start of URL stuff
         let urlString = "https://api.deepai.org/api/densecap"
         let url = URL(string: urlString)
@@ -59,26 +58,26 @@ class APICommands{
         let session = URLSession.shared
         let task = session.dataTask(with: request) { data, response, error in
             if error != nil { // Handle error
+                done.signal()
+                print(error)
                 return
             }
             do{
-            //print(String(data: data!, encoding: .utf8)!)
-            let decoder = JSONDecoder()
-            decoded = try decoder.decode(Results.self, from: data!)
-            done.signal()
+                //print(String(data: data!, encoding: .utf8)!)
+                let decoder = JSONDecoder()
+                decoded = try decoder.decode(Results.self, from: data!)
             } catch {
                 print(error)
             }
+            done.signal()
         }
         task.resume()
         done.wait()
         for caption in (decoded.output.captions) {
             if((caption.caption.contains(word))){
-            print("y")
-            return true;
+                return true;
             }
         }
-        print("w")
         return false;
     }
 }
