@@ -37,7 +37,7 @@ class APICommands{
         let boundary = "------------------------5870595d8c958198"
         let imageData = image.jpegData(compressionQuality: 1.0)
         var body = Data()
-        var decoded: Output = Output(captions: [Captions(caption: "nothing", confidence: 0.0)])
+        var decoded: Output = Output(captions: [Captions(caption: "nothing")])
         body.append("\r\n--\(boundary)".data(using:.utf8)!)
         body.append("\r\nContent-Disposition: form-data; name=\"image\"; filename=\"xx.jpg\"\r\n".data(using:.utf8)!)
         body.append("Content-Type: image/jpeg\r\n\r\n".data(using:.utf8)!)

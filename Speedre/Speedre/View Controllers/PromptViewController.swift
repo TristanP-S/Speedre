@@ -36,8 +36,12 @@ class PromptViewController: UIViewController, UIImagePickerControllerDelegate, U
     //opens up camera for use that will send user to results screen when finished
     func openCamera(){
         let imagePicker = UIImagePickerController()
-       //CHANGE TO .camera LATER, THIS IS BECAUSE CAMERA ISN'T AVAILIABLE ON SIM (oly .photoLibrary is)
+        //uses album if camera isn't avaliable on device
+        if(UIImagePickerController.isSourceTypeAvailable(.camera)){
+         imagePicker.sourceType = .camera
+        } else {
         imagePicker.sourceType = .photoLibrary
+        }
         imagePicker.delegate = self
         self.present(imagePicker, animated: true, completion: nil)
     }

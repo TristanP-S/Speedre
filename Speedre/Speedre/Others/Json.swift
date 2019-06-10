@@ -23,15 +23,14 @@ var result = "Item not checked"
 //JSON PARSING STUFF
 import Foundation
 //results returned after image is sent to API
-struct Results: Codable{
+struct Results: Decodable{
     let output: Output
 }
-struct Output: Codable{
+struct Output: Decodable{
     let captions: [Captions]
 }
-struct Captions: Codable{
+struct Captions: Decodable{
     let caption: String
-    let confidence: Double
 }
 //api key encoding returned after reqeust
 struct APIKeyDecode: Codable{
