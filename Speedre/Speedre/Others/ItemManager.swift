@@ -9,16 +9,16 @@
 import Foundation
 
 class ItemManager {
-    //initializes item by setting it to a random item
-    init() {
-        newItem()
-    }
     // define possible items here, kept it short for running without camera
     var itempool: [String] = [
         "flower",
         "dog",
         "leaf",
         "cat"]
+    //initializes item by setting it to a random item
+    init() {
+        newItem()
+    }
     var curWord: String = "house"
     //shuffles item array and returns first element
     func newItem() -> String {

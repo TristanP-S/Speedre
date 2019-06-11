@@ -5,8 +5,8 @@
 //  Created by Tristan Pudell-Spatscheck on 6/9/19.
 //  Copyright © 2019 TAPS. All rights reserved.
 //
-
-
+import Foundation
+import UIKit
 //GLOBAL VARIABLES
 //checks if camera just completed
 var camera = false
@@ -18,9 +18,9 @@ let item = ItemManager()
 var result = "Item not checked"
 //results of checking if item can be found in photo
 var correct = false
+//image stored from camera
+var image: UIImage = UIImage(named: "camera")!
 //JSON PARSING STUFF
-import Foundation
-
 struct Results: Codable {
     let output: Output
     let id: String

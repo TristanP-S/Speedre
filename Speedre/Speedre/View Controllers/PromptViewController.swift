@@ -11,13 +11,31 @@ import CoreData
 class PromptViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     @IBOutlet weak var promptLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    var img: UIImage = UIImage()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.promptLabel.text = "Take a photo of/with: \(item.currItem())"
         if(camera){
-        camera=false
-        let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultsVC")
-        present(vc, animated: true)
+            camera=false
+            let alert = UIAlertController(title: "AI Is Working!", message: "This can take up to 30 seconds!", preferredStyle: UIAlertController.Style.alert)
+            self.present(alert, animated: true, completion: nil)
+            
+            // RUN this in the background so we can show the pop up box
+            let dispatchQueue = DispatchQueue(label: "Check if image is correct", qos: .background)
+            dispatchQueue.async {
+                //userID = deviceID, image=image sent, word = word that is being looked for
+                correct = APICommands(userID: UIDevice.current.identifierForVendor!.uuidString).checkImg(image: self.img, word: item.currItem())
+                if(correct){
+                    result="manged"
+                } else {
+                    result="failed"
+                }
+                
+                alert.dismiss(animated: true, completion: nil)
+                
+                let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "resultsVC")
+                self.present(vc, animated: true)
+            }
         } else {
             //sleep is here to let view load properly and give user time to read the prompt
             sleep(1)
@@ -38,24 +56,18 @@ class PromptViewController: UIViewController, UIImagePickerControllerDelegate, U
         let imagePicker = UIImagePickerController()
         //uses album if camera isn't avaliable on device
         if(UIImagePickerController.isSourceTypeAvailable(.camera)){
-         imagePicker.sourceType = .camera
+            imagePicker.sourceType = .camera
         } else {
-        imagePicker.sourceType = .photoLibrary
+            imagePicker.sourceType = .photoLibrary
         }
         imagePicker.delegate = self
         self.present(imagePicker, animated: true, completion: nil)
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let img = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        if let localimg = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             //sends in image to be checked (and userID is set to the deviceID)
             camera = true
-            //userID = deviceID, image=image sent, word = word that is being looked for
-            correct = APICommands(userID: UIDevice.current.identifierForVendor!.uuidString).checkImg(image: img, word: item.currItem())
-            if(correct){
-                result="manged"
-            } else {
-                result="failed"
-            }
+            img=localimg
             dismiss(animated: true, completion: nil)
             viewDidLoad()
         } else {

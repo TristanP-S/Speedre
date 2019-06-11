@@ -61,50 +61,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KSX-F9-OOy">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a photo of/with: (add item here with code)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sct-iJ-lJU">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make this a timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnH-YI-fFU">
-                                        <rect key="frame" x="0.0" y="20.5" width="414" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKU-t3-bhR">
-                                        <rect key="frame" x="0.0" y="41" width="414" height="61"/>
-                                        <string key="text">WARNING: Photo can take up to 2 minutes to load once selected from camera. Please be patient, tapping multiple times can cause app to crash.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2b-wR-l13">
-                                        <rect key="frame" x="0.0" y="102" width="414" height="716"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                        <state key="normal" title="Take a photo" image="camera"/>
-                                        <connections>
-                                            <action selector="cameraPressed:" destination="nZI-N4-bLu" eventType="touchUpInside" id="7RW-Mq-TDB"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make this a timer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnH-YI-fFU">
+                                <rect key="frame" x="141.5" y="377.5" width="131" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2b-wR-l13">
+                                <rect key="frame" x="117" y="398" width="180" height="100"/>
                                 <constraints>
-                                    <constraint firstItem="XnH-YI-fFU" firstAttribute="centerX" secondItem="KSX-F9-OOy" secondAttribute="centerX" id="KF7-Pk-tPR"/>
-                                    <constraint firstItem="sct-iJ-lJU" firstAttribute="centerX" secondItem="KSX-F9-OOy" secondAttribute="centerX" id="Ngg-Gp-Fzf"/>
-                                    <constraint firstItem="XnH-YI-fFU" firstAttribute="top" secondItem="sct-iJ-lJU" secondAttribute="bottom" id="Z6w-IL-8pQ"/>
+                                    <constraint firstAttribute="height" constant="100" id="0l3-va-ZCh"/>
+                                    <constraint firstAttribute="width" constant="180" id="YHD-hK-S9H"/>
                                 </constraints>
-                            </stackView>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                <state key="normal" title="Take a photo" image="camera"/>
+                                <connections>
+                                    <action selector="cameraPressed:" destination="nZI-N4-bLu" eventType="touchUpInside" id="7RW-Mq-TDB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a photo of/with: (add item here with code)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sct-iJ-lJU">
+                                <rect key="frame" x="27" y="357" width="360.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="YWy-6M-puQ" firstAttribute="bottom" secondItem="KSX-F9-OOy" secondAttribute="bottom" id="4vi-UI-c5Q"/>
-                            <constraint firstItem="KSX-F9-OOy" firstAttribute="top" secondItem="YWy-6M-puQ" secondAttribute="top" id="Lt9-yD-ujl"/>
-                            <constraint firstItem="YWy-6M-puQ" firstAttribute="trailing" secondItem="KSX-F9-OOy" secondAttribute="trailing" id="V6a-YL-n7j"/>
-                            <constraint firstItem="KSX-F9-OOy" firstAttribute="leading" secondItem="YWy-6M-puQ" secondAttribute="leading" id="edl-I6-Kxe"/>
+                            <constraint firstItem="XnH-YI-fFU" firstAttribute="top" secondItem="sct-iJ-lJU" secondAttribute="bottom" id="Mee-9q-ifV"/>
+                            <constraint firstItem="c2b-wR-l13" firstAttribute="centerY" secondItem="aMr-8I-ewY" secondAttribute="centerY" id="Mvk-qh-ntQ"/>
+                            <constraint firstItem="c2b-wR-l13" firstAttribute="centerX" secondItem="aMr-8I-ewY" secondAttribute="centerX" id="US2-es-Ghh"/>
+                            <constraint firstItem="sct-iJ-lJU" firstAttribute="centerX" secondItem="aMr-8I-ewY" secondAttribute="centerX" id="fPs-aT-v8z"/>
+                            <constraint firstItem="XnH-YI-fFU" firstAttribute="centerX" secondItem="aMr-8I-ewY" secondAttribute="centerX" id="uur-8G-fc1"/>
+                            <constraint firstItem="c2b-wR-l13" firstAttribute="top" secondItem="XnH-YI-fFU" secondAttribute="bottom" id="yED-LL-qXJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YWy-6M-puQ"/>
                     </view>
