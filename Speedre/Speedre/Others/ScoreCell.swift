@@ -8,7 +8,6 @@
 import UIKit
 import Foundation
 class ScoreCell: UITableViewCell{
-    @IBOutlet weak var numLabel: UILabel!
     @IBOutlet weak var itemLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
 }

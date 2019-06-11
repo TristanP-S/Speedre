@@ -50,8 +50,8 @@ class PromptViewController: UIViewController, UIImagePickerControllerDelegate, U
             //sends in image to be checked (and userID is set to the deviceID)
             camera = true
             //userID = deviceID, image=image sent, word = word that is being looked for
-            var results = APICommands(userID: UIDevice.current.identifierForVendor!.uuidString).checkImg(image: img, word: item.currItem())
-            if(results){
+            correct = APICommands(userID: UIDevice.current.identifierForVendor!.uuidString).checkImg(image: img, word: item.currItem())
+            if(correct){
                 result="manged"
             } else {
                 result="failed"

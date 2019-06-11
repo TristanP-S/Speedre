@@ -8,10 +8,11 @@
 import UIKit
 import Foundation
 import CoreData
-class ScoresViewController: UITableViewController{
+class ScoresViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     //scores for tableview
     var scores: [Score] = []
     
+    @IBOutlet weak var tableView: UITableView!
     func fetchInfo () {
         let fetchRequest: NSFetchRequest<Score> = Score.fetchRequest()
         do {
@@ -23,18 +24,18 @@ class ScoresViewController: UITableViewController{
             return
         }
     }
-    //sets # of items loaded in table view at once
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         fetchInfo()
         print(scores.count)
         return scores.count;
     }
-    //sets up each cell in table view
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell=tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath) as! ScoreCell
         cell.itemLabel.text = scores[indexPath.row].item
-        cell.numLabel.text = "\(indexPath.row)"
-        cell.timeLabel.text = scores[indexPath.row].item
+        cell.timeLabel.text = String(format: "%.1f", scores[indexPath.row].time)
         return cell
+    }
+    @IBAction func backButtonPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

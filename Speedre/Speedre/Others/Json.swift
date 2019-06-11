@@ -16,8 +16,8 @@ var time = 0.0
 let item = ItemManager()
 //results of checking photo taken
 var result = "Item not checked"
-
-
+//results of checking if item can be found in photo
+var correct = false
 //JSON PARSING STUFF
 import Foundation
 

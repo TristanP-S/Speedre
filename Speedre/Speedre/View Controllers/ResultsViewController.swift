@@ -15,7 +15,8 @@ class ResultsViewController: UIViewController{
         super.viewDidLoad()
         self.timerLabel.text = String(format: "%.1f", time)
         self.resultsLabel.text = "You \(result) to include a \(item.currItem()) in your photo"
-        //attempts to add results to coredata (not working yet)
+        //persists item+time if item was found in photo
+        if(correct){
         let results = Score(context: dataController.viewContext)
         results.time = time
         results.item = item.currItem()
@@ -23,6 +24,7 @@ class ResultsViewController: UIViewController{
             try dataController.viewContext.save()
         } catch {
             return
+        }
         }
     }
     //fucntion called when try again is pressed
@@ -38,7 +40,7 @@ class ResultsViewController: UIViewController{
     }
     //function called when "All Scores" is pressed
     @IBAction func allScoresPressed(_ sender: Any) {
-        let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "scoreVC")
+        let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "scoresVC")
         self.navigationController?.pushViewController(vc, animated: true)
         self.present(vc, animated: true)
     }
